@@ -327,6 +327,40 @@ r +  \gamma \max\limits_{a'}Q(s',a') - Q(s,a)
 \caption{Q Learning}
 \end{algorithm}
 
+\section{Sarsa}
+
+Sarsa (State-action-reward-state-action) is to control what Temporal Difference is to policy evaluation.
+
+\begin{equation*}
+    Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha \left[r_t + \gamma Q(s_{t+1}, a_{t+1}) - Q(s_t, a_t) \right]
+\end{equation*}
+
+\subsection{$n$-step Sarsa}
+
+Define the $n$-step Q-Return
+
+\begin{equation*}
+    q^{(n)} = R_{t+1} + \gamma R{t+2} + \ldots + \gamma^{n-1} R_{t+n} + \gamma^n Q(S_{t+n})
+\end{equation*}
+
+$n$-step Sarsa update $Q(S, a)$ towards the $n$-step Q-return
+
+\begin{equation*}
+    Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha \left[q_t^{(n)} - Q(s_t, a_t) \right]
+\end{equation*}
+
+\subsection{Forward View Sarsa($\lambda$)}
+
+\begin{equation*}
+    q_t^\lambda = (1-\lambda) \sum_{n=1}^\infty \lambda^{n-1} q_t^{(n)}
+\end{equation*}
+
+Forward-view Sarsa($\lambda$):
+
+\begin{equation*}
+    Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha \left[q_t^\lambda - Q(s_t, a_t) \right]
+\end{equation*}
+
 \section{Deep Q Learning}
 Created by $DeepMind$, Deep Q Learning, DQL, substitutes the $Q$ function with a deep neural network called \emph{Q-network}. It also keep track of some observation in a $memory$ in order to use them to train the network.
 \begin{equation}
