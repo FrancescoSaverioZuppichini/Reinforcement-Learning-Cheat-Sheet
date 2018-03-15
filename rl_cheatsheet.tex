@@ -79,6 +79,7 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt plus 0.5ex}
 
+\DeclareMathOperator*{\argmax}{argmax}
 
 % -----------------------------------------------------------------------
 
@@ -87,7 +88,6 @@
 \raggedright
 \footnotesize
 \begin{multicols}{3}
-
 
 % multicol parameters
 % These lengths are set only within the two main columns
@@ -125,7 +125,6 @@ G_t = \sum_{k = 0}^H = \gamma^kr_{t + k + 1}
 \end{equation}
 Where $\gamma$ is the \emph{discount factor} and $H$ is the \emph{horizon}, that can be infinite.
 
-
 \subsection{Markov Decision Process}
 A \textbf{Markov Decision Process}, MPD, is a 5-tuple $(S, A, P, R, \gamma)$ where:
 \begin{equation}
@@ -140,6 +139,7 @@ A \textbf{Markov Decision Process}, MPD, is a 5-tuple $(S, A, P, R, \gamma)$ whe
 	r(s',s, a) = \mathbb{E}[ R_{t + 1} | S_{t + 1} = s',  S_t = s, A_t = a ]  \\
 	\end{array}
 \end{equation}
+
 \section{Value Function}
 Value function describes \emph{how good} is to be in a specific state $s$ under a certain policy $\pi$. For MDP:
 \begin{equation}
@@ -194,7 +194,7 @@ v_{\pi}(s) & = \mathbb{E}_{\pi}\begin{bmatrix}G_t | S_t = s\end{bmatrix} \\
 \end{array}
 \label{eq: value_bellman}
 \end{equation}
-Similar, we can do the same for the Q function:
+Similarly, we can do the same for the Q function:
 
 \begin{equation}
 \begin{array}{l l}
@@ -236,11 +236,11 @@ We can now, find the optimal policy
  \While{not policy-stable}{
   \ForEach{$s \in S$} {
   	\emph{old-action} $\leftarrow \pi(s)$
-  	$\pi(s) \leftarrow \text{argmax}\limits_a\sum\limits_{s', r} p(s',r | s, a) \begin{bmatrix}
-  		r + \gamma V(s')
+        $\pi(s) \leftarrow \argmax\limits_a\sum\limits_{s', r} p(s',r | s, a)  \begin{bmatrix}
+            r + \gamma V(s')
   	\end{bmatrix}$ \\
-  	\emp{policy-stable} $\leftarrow$ \emph{old-action} $ \neq \pi(s)$
-  	  	}
+  	\emph{policy-stable} $\leftarrow$ \emph{old-action} $ \neq \pi(s)$
+  }
  }
 \caption{Policy Iteration}
 \end{algorithm}
@@ -248,11 +248,7 @@ We can now, find the optimal policy
 \subsection{Value Iteration}
 We can avoid to wait until $V(s)$ has converged and instead to policy improvement and truncated policy evaluation step in one operation
 \begin{algorithm}[H]
-%\SetAlgoLine
- \SetKwInOut{Output}{ouput}
- \SetKwInOut{Input}{inputs}
-  \SetKwProg{ValueIteration}{Value Iteration}{}{}
-%   \ValueIteration{$(Q,D):$}{
+  \SetKwInOut{Output}{ouput}
  Initialise $V(s) \in \mathbb{R}, \text{e.g} V(s) = 0$ \\
  $\Delta \leftarrow 0$ \\
  \While{$\Delta < \theta$ (a small positive number)}{
@@ -262,16 +258,14 @@ We can avoid to wait until $V(s)$ has converged and instead to policy improvemen
   		r + \gamma V(s')
   	\end{bmatrix}$ \\
   	$\Delta \leftarrow \max(\Delta, | v - V(s)|)$
-  	}
+  }
  }
-  \Output{Deterministic policy $\pi \approx \pi_*$ such that}
-  $\pi(s) = \text{argmax}\limits_a \sum\limits_{s', r} p(s',r | s, a) \begin{bmatrix}
-  		r + \gamma V(s')
-  	\end{bmatrix}$
-% }
+ \Output{Deterministic policy $\pi \approx \pi_*$ such that}
+ $\pi(s) = \argmax\limits_a \sum\limits_{s', r} p(s',r | s, a) \begin{bmatrix}
+     r + \gamma V(s')
+  \end{bmatrix}$
 \caption{Value Iteration}
 \end{algorithm}
-% }
 
 \end{multicols}
 
@@ -280,11 +274,6 @@ We can avoid to wait until $V(s)$ has converged and instead to policy improvemen
 Monte Carlo (MC) is a \emph{Model Free} method, It does not require complete knowledge of the environment. It is based on \textbf{averaging sample returns} for each state-action pair. The following algorithm gives the basic implementation
 
 \begin{algorithm}[H]
-%\SetAlgoLine
- \SetKwInOut{Output}{ouput}
- \SetKwInOut{Input}{inputs}
-  \SetKwProg{ValueIteration}{Value Iteration}{}{}
-%   \ValueIteration{$(Q,D):$}{
  Initialise for all $s \in S, a \in A(s):$ \\
 	$\quad Q(s,a) \leftarrow \text{arbitrary}$ \\
 	$\quad \pi(s) \leftarrow \text{arbitrary}$ \\
@@ -299,7 +288,7 @@ Monte Carlo (MC) is a \emph{Model Free} method, It does not require complete kno
 		$\quad$ Append $G$ to $Returns(s,a))$ \\
 		$\quad Q(s,a) \leftarrow average(Returns(s,a))$ \\
 		\item[(c)] For each $s$ in the episode: \\
-		$\quad \pi(s) \leftarrow \text{argmax}\limits_a Q(s,a)$
+		$\quad \pi(s) \leftarrow \argmax\limits_a Q(s,a)$
 
 	\end{enumerate}
 
@@ -314,6 +303,7 @@ V(S_t) \leftarrow V(S_t) + \alpha \begin{bmatrix}
 \end{bmatrix}
 \end{equation}
 Where $\alpha$ is the learning rate, how much we want to forget about pass experiences.
+
 \section{Temporal Difference - Q Learning}
 Temporal Difference (TD) methods learn directly from raw experience without a model of the environment's dynamics. TD substitutes the expected discounted reward $G_t$ from the episode with an estimation:
 \begin{equation}
@@ -323,10 +313,6 @@ R_{t + 1} \gamma V(S_{t+1} - V(S_t)
 \end{equation}
 The following algorithm gives a generic implementation.
 \begin{algorithm}[H]
-%\SetAlgoLine
-% \SetKwInOut{Output}{ouput}
-% \SetKwInOut{Input}{inputs}
-%  \SetKwProg{ValueIteration}{Value Iteration}{}{}
  Initialise $Q(s,a)$ arbitrarily \\
   \ForEach{episode $\in$ episodes}{
  	\While{$s$ is not terminal} {
@@ -340,6 +326,7 @@ r +  \gamma \max\limits_{a'}Q(s',a') - Q(s,a)
  }
 \caption{Q Learning}
 \end{algorithm}
+
 \section{Deep Q Learning}
 Created by $DeepMind$, Deep Q Learning, DQL, substitutes the $Q$ function with a deep neural network called \emph{Q-network}. It also keep track of some observation in a $memory$ in order to use them to train the network.
 \begin{equation}
@@ -350,31 +337,27 @@ L_i(\theta_i) = \mathbb{E}_{(s, a, r, s') \sim U(D)}\begin{bmatrix}
 Where $\theta$ are the weights of the network and $U(D)$ is the experience replay history.
 
 \begin{algorithm}[H]
-%\SetAlgoLine
-% \SetKwInOut{Output}{ouput}
-% \SetKwInOut{Input}{inputs}
-%  \SetKwProg{ValueIteration}{Value Iteration}{}{}
  Initialise replay memory $D$ with capacity $N$\\
  Initialise $Q(s,a)$ arbitrarily \\
-  \ForEach{episode $\in$ episodes}{
+ \ForEach{episode $\in$ episodes}{
  	\While{$s$ is not terminal} {
- 	With probability $\epsilon$ select a random action $a \in A(s)$ \\
- 	otherwise select $a = \max_a Q(s, a; \theta)$ \\
-	Take action $a$, observer $r, s'$ \\
-	Store transition $(s, a, r, s')$ in $D$ \\
-	Sample random minibatch of transitions $(s_j, a_j, r_j, s'_j)$ from $D$ \\
-	$ \text{Set } y_i \left\{
-	\begin{array}{lll}
-		r_j && \text{for terminal } s_j'\\
-		r_j + \gamma \max\limits_a Q(s',a'; \theta) && \text{for non-terminal } s'_j
-	\end{array}
-	$ \\
-	Perform gradient descent step on $(y_j - Q(s_j, a_j;\Theta))^2 $ \\
-	$s \leftarrow s'$
-
- }}
+ 	 With probability $\epsilon$ select a random action $a \in A(s)$ \\
+ 	 otherwise select $a = \max_a Q(s, a; \theta)$ \\
+	 Take action $a$, observer $r, s'$ \\
+	 Store transition $(s, a, r, s')$ in $D$ \\
+	 Sample random minibatch of transitions $(s_j, a_j, r_j, s'_j)$ from $D$ \\
+         $\text{Set } y_i \leftarrow
+           \begin{cases}
+	       r_j & \text{for terminal } s_j'\\
+	       r_j + \gamma \max\limits_a Q(s',a'; \theta) & \text{for non-terminal } s'_j
+           \end{cases}$ \\
+	 Perform gradient descent step on $(y_j - Q(s_j, a_j;\Theta))^2 $ \\
+	 $s \leftarrow s'$
+        }
+ }
 \caption{Q Learning}
 \end{algorithm}
+
 %---------------------------------------------------------------------------
 
 \rule{0.3\linewidth}{0.25pt}
