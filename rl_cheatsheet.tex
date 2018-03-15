@@ -42,11 +42,11 @@
 % if using A4 paper. (This probably isn't strictly necessary.)
 % If using another size paper, use default 1cm margins.
 \ifthenelse{\lengthtest { \paperwidth = 11in}}
-	{ \geometry{top=.5in,left=.5in,right=.5in,bottom=.5in} }
-	{\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
-		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
-		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
-	}
+        { \geometry{top=.5in,left=.5in,right=.5in,bottom=.5in} }
+        {\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+                {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+                {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+        }
 
 % Turn off header and footer
 \pagestyle{empty}
@@ -128,16 +128,16 @@ Where $\gamma$ is the \emph{discount factor} and $H$ is the \emph{horizon}, that
 \subsection{Markov Decision Process}
 A \textbf{Markov Decision Process}, MPD, is a 5-tuple $(S, A, P, R, \gamma)$ where:
 \begin{equation}
-	\begin{array}{l}
-	 \text{finite set of states:} \\
-	 	s \in S \\
-	 \text{finite set of actions:} \\
-	a \in A \\
-		 \text{state transition probabilities:} \\
-	p(s' | s, a) = Pr \{S_{t + 1} = s' | S_t = s, A_t = a \} \\
-		\text{expected reward for state-action-nexstate:}\\
-	r(s',s, a) = \mathbb{E}[ R_{t + 1} | S_{t + 1} = s',  S_t = s, A_t = a ]  \\
-	\end{array}
+        \begin{array}{l}
+         \text{finite set of states:} \\
+                s \in S \\
+         \text{finite set of actions:} \\
+        a \in A \\
+                 \text{state transition probabilities:} \\
+        p(s' | s, a) = Pr \{S_{t + 1} = s' | S_t = s, A_t = a \} \\
+                \text{expected reward for state-action-nexstate:}\\
+        r(s',s, a) = \mathbb{E}[ R_{t + 1} | S_{t + 1} = s',  S_t = s, A_t = a ]  \\
+        \end{array}
 \end{equation}
 
 \section{Value Function}
@@ -206,7 +206,7 @@ q_{\pi}(s,a) &= \mathbb{E}_{\pi}\begin{bmatrix} G_t | S_t = s, A_t = a \end{bmat
 \\
 &=\sum\limits_{s',r} p(s', r| s, a)\begin{bmatrix}r +\mathbb{E}_{\pi} \begin{bmatrix} \sum\limits_{k = 0}^{\infty} \gamma^k   R_{t + k + 2} | S_{t+1} = s' \end{bmatrix}  \end{bmatrix} \\
 \\
- 	&=\sum\limits_{s',r} p(s', r| s, a)\begin{bmatrix}r +\gamma  V_{\pi}(s') \end{bmatrix}\\
+        &=\sum\limits_{s',r} p(s', r| s, a)\begin{bmatrix}r +\gamma  V_{\pi}(s') \end{bmatrix}\\
 \end{array}
 \label{eq: action_value_bellman}
 \end{equation}
@@ -223,23 +223,23 @@ We can now, find the optimal policy
  2. Policy Evaluation \\
  \While{$\Delta < \theta$ (a small positive number)}{
   \ForEach{$s \in S$} {
-  	$v \leftarrow V(s)$\\
-  	$V(s) \leftarrow \sum\limits_a \pi(a|s) \sum\limits_{s', r} p(s',r | s, a) \begin{bmatrix}
-  		r + \gamma V(s')
-  	\end{bmatrix}$ \\
-  	$\Delta \leftarrow \max(\Delta, | v - V(s)|)$
-  	}
+        $v \leftarrow V(s)$\\
+        $V(s) \leftarrow \sum\limits_a \pi(a|s) \sum\limits_{s', r} p(s',r | s, a) \begin{bmatrix}
+                r + \gamma V(s')
+        \end{bmatrix}$ \\
+        $\Delta \leftarrow \max(\Delta, | v - V(s)|)$
+        }
 
  }
  3. Policy Improvement \\
  \emph{policy-stable} $ \leftarrow $ \emph{true} \\
  \While{not policy-stable}{
   \ForEach{$s \in S$} {
-  	\emph{old-action} $\leftarrow \pi(s)$
+        \emph{old-action} $\leftarrow \pi(s)$
         $\pi(s) \leftarrow \argmax\limits_a\sum\limits_{s', r} p(s',r | s, a)  \begin{bmatrix}
             r + \gamma V(s')
-  	\end{bmatrix}$ \\
-  	\emph{policy-stable} $\leftarrow$ \emph{old-action} $ \neq \pi(s)$
+        \end{bmatrix}$ \\
+        \emph{policy-stable} $\leftarrow$ \emph{old-action} $ \neq \pi(s)$
   }
  }
 \caption{Policy Iteration}
@@ -253,11 +253,11 @@ We can avoid to wait until $V(s)$ has converged and instead to policy improvemen
  $\Delta \leftarrow 0$ \\
  \While{$\Delta < \theta$ (a small positive number)}{
   \ForEach{$s \in S$} {
-  	$v \leftarrow V(s)$\\
-  	$V(s) \leftarrow \max\limits_a \sum\limits_{s', r} p(s',r | s, a) \begin{bmatrix}
-  		r + \gamma V(s')
-  	\end{bmatrix}$ \\
-  	$\Delta \leftarrow \max(\Delta, | v - V(s)|)$
+        $v \leftarrow V(s)$\\
+        $V(s) \leftarrow \max\limits_a \sum\limits_{s', r} p(s',r | s, a) \begin{bmatrix}
+                r + \gamma V(s')
+        \end{bmatrix}$ \\
+        $\Delta \leftarrow \max(\Delta, | v - V(s)|)$
   }
  }
  \Output{Deterministic policy $\pi \approx \pi_*$ such that}
@@ -275,22 +275,22 @@ Monte Carlo (MC) is a \emph{Model Free} method, It does not require complete kno
 
 \begin{algorithm}[H]
  Initialise for all $s \in S, a \in A(s):$ \\
-	$\quad Q(s,a) \leftarrow \text{arbitrary}$ \\
-	$\quad \pi(s) \leftarrow \text{arbitrary}$ \\
-	$\quad Returns(s,a) \leftarrow \text{empty list}$ \\
+        $\quad Q(s,a) \leftarrow \text{arbitrary}$ \\
+        $\quad \pi(s) \leftarrow \text{arbitrary}$ \\
+        $\quad Returns(s,a) \leftarrow \text{empty list}$ \\
 
  \While{forever}{
-	\begin{enumerate}
-		\item[(a)] Choose $S_0 \in S)$ and $A_0 \in A(S_0)$, all pairs have probability $ > 0$ \\
-		Generate an episode starting from $S_0, A_0$ following $\pi$
-		\item[(b)] For each pair $s,a$ appearing in the episode: \\
-		$\quad G \leftarrow$ return following the first occurrence of $s,a$ \\
-		$\quad$ Append $G$ to $Returns(s,a))$ \\
-		$\quad Q(s,a) \leftarrow average(Returns(s,a))$ \\
-		\item[(c)] For each $s$ in the episode: \\
-		$\quad \pi(s) \leftarrow \argmax\limits_a Q(s,a)$
+        \begin{enumerate}
+                \item[(a)] Choose $S_0 \in S)$ and $A_0 \in A(S_0)$, all pairs have probability $ > 0$ \\
+                Generate an episode starting from $S_0, A_0$ following $\pi$
+                \item[(b)] For each pair $s,a$ appearing in the episode: \\
+                $\quad G \leftarrow$ return following the first occurrence of $s,a$ \\
+                $\quad$ Append $G$ to $Returns(s,a))$ \\
+                $\quad Q(s,a) \leftarrow average(Returns(s,a))$ \\
+                \item[(c)] For each $s$ in the episode: \\
+                $\quad \pi(s) \leftarrow \argmax\limits_a Q(s,a)$
 
-	\end{enumerate}
+        \end{enumerate}
 
  }
 \caption{Monte Carlo first-visit }
@@ -299,7 +299,7 @@ Monte Carlo (MC) is a \emph{Model Free} method, It does not require complete kno
 For no-stationary problems, the Monte Carlo estimate for, e.g, $V$ is:
 \begin{equation}
 V(S_t) \leftarrow V(S_t) + \alpha \begin{bmatrix}
-	G_t - V(S_t)
+        G_t - V(S_t)
 \end{bmatrix}
 \end{equation}
 Where $\alpha$ is the learning rate, how much we want to forget about pass experiences.
@@ -315,14 +315,14 @@ The following algorithm gives a generic implementation.
 \begin{algorithm}[H]
  Initialise $Q(s,a)$ arbitrarily \\
   \ForEach{episode $\in$ episodes}{
- 	\While{$s$ is not terminal} {
-	Choose $a$ from $s$ using policy derived from $Q$ (e.g., $\epsilon$-greedy) \\
-	Take action $a$, observer $r, s'$ \\
-	$Q(s,a) \leftarrow Q(s,a) + \alpha  \begin{bmatrix}
+        \While{$s$ is not terminal} {
+        Choose $a$ from $s$ using policy derived from $Q$ (e.g., $\epsilon$-greedy) \\
+        Take action $a$, observer $r, s'$ \\
+        $Q(s,a) \leftarrow Q(s,a) + \alpha  \begin{bmatrix}
 r +  \gamma \max\limits_{a'}Q(s',a') - Q(s,a)
 \end{bmatrix}$\\
-	$s \leftarrow s'$
-	}
+        $s \leftarrow s'$
+        }
  }
 \caption{Q Learning}
 \end{algorithm}
@@ -331,7 +331,7 @@ r +  \gamma \max\limits_{a'}Q(s',a') - Q(s,a)
 Created by $DeepMind$, Deep Q Learning, DQL, substitutes the $Q$ function with a deep neural network called \emph{Q-network}. It also keep track of some observation in a $memory$ in order to use them to train the network.
 \begin{equation}
 L_i(\theta_i) = \mathbb{E}_{(s, a, r, s') \sim U(D)}\begin{bmatrix}
-	( \underbrace{r + \gamma \max\limits_a Q(s',a'; \theta_{i-1})}_\text{target} - \underbrace{Q(s,a;\theta_i)}_\text{prediction})^2
+        ( \underbrace{r + \gamma \max\limits_a Q(s',a'; \theta_{i-1})}_\text{target} - \underbrace{Q(s,a;\theta_i)}_\text{prediction})^2
 \end{bmatrix}
 \end{equation}
 Where $\theta$ are the weights of the network and $U(D)$ is the experience replay history.
@@ -340,19 +340,19 @@ Where $\theta$ are the weights of the network and $U(D)$ is the experience repla
  Initialise replay memory $D$ with capacity $N$\\
  Initialise $Q(s,a)$ arbitrarily \\
  \ForEach{episode $\in$ episodes}{
- 	\While{$s$ is not terminal} {
- 	 With probability $\epsilon$ select a random action $a \in A(s)$ \\
- 	 otherwise select $a = \max_a Q(s, a; \theta)$ \\
-	 Take action $a$, observer $r, s'$ \\
-	 Store transition $(s, a, r, s')$ in $D$ \\
-	 Sample random minibatch of transitions $(s_j, a_j, r_j, s'_j)$ from $D$ \\
+        \While{$s$ is not terminal} {
+         With probability $\epsilon$ select a random action $a \in A(s)$ \\
+         otherwise select $a = \max_a Q(s, a; \theta)$ \\
+         Take action $a$, observer $r, s'$ \\
+         Store transition $(s, a, r, s')$ in $D$ \\
+         Sample random minibatch of transitions $(s_j, a_j, r_j, s'_j)$ from $D$ \\
          $\text{Set } y_i \leftarrow
            \begin{cases}
-	       r_j & \text{for terminal } s_j'\\
-	       r_j + \gamma \max\limits_a Q(s',a'; \theta) & \text{for non-terminal } s'_j
+               r_j & \text{for terminal } s_j'\\
+               r_j + \gamma \max\limits_a Q(s',a'; \theta) & \text{for non-terminal } s'_j
            \end{cases}$ \\
-	 Perform gradient descent step on $(y_j - Q(s_j, a_j;\Theta))^2 $ \\
-	 $s \leftarrow s'$
+         Perform gradient descent step on $(y_j - Q(s_j, a_j;\Theta))^2 $ \\
+         $s \leftarrow s'$
         }
  }
 \caption{Q Learning}
