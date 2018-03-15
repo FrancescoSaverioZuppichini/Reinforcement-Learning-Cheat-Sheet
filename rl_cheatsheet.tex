@@ -306,18 +306,16 @@ Monte Carlo (MC) is a \emph{Model Free} method, It does not require complete kno
         $\quad Returns(s,a) \leftarrow \text{empty list}$ \\
 
  \While{forever}{
-        \begin{enumerate}
-                \item[(a)] Choose $S_0 \in S)$ and $A_0 \in A(S_0)$, all pairs have probability $ > 0$ \\
-                Generate an episode starting from $S_0, A_0$ following $\pi$
-                \item[(b)] For each pair $s,a$ appearing in the episode: \\
-                $\quad G \leftarrow$ return following the first occurrence of $s,a$ \\
-                $\quad$ Append $G$ to $Returns(s,a))$ \\
-                $\quad Q(s,a) \leftarrow average(Returns(s,a))$ \\
-                \item[(c)] For each $s$ in the episode: \\
-                $\quad \pi(s) \leftarrow \argmax\limits_a Q(s,a)$
-
-        \end{enumerate}
-
+    Choose $S_0 \in S$ and $A_0 \in A(S_0)$, all pairs have probability $ > 0$ \\
+    Generate an episode starting at $S_0, A_0$ following $\pi$
+    \ForEach{pair $s,a$ appearing in the episode}{
+        $G \leftarrow$ return following the first occurrence of $s,a$ \\
+        Append $G$ to $Returns(s,a))$ \\
+        $Q(s,a) \leftarrow average(Returns(s,a))$ \\
+    }
+    \ForEach{$s$ in the episode}{
+        $\pi(s) \leftarrow \argmax\limits_a Q(s,a)$
+    }
  }
 \caption{Monte Carlo first-visit }
 \end{algorithm}
