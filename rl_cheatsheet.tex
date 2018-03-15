@@ -385,6 +385,26 @@ Forward-view Sarsa($\lambda$):
     Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha \left[q_t^\lambda - Q(s_t, a_t) \right]
 \end{equation*}
 
+\begin{algorithm}[H]
+    Initialise $Q(s, a)$ arbitrarily, for all $s \in \mathcal{S}$, $a \in \mathcal{A}(s)$\\
+    \ForEach{episode $\in$ episodes} {
+        Initialise \emph{eligibility traces}: $E(s, a) = 0$ for all $s \in \mathcal{S}$, $a \in \mathcal{A}(s)$\\
+        Initialise $S$, $A$ \\
+        \While{$s$ is not terminal} {
+            take action $A$, observe $R$, $S'$ \\
+            choose $A'$ from $S'$ using policy derived from $Q$ (e.g. $\epsilon$-greedy) \\
+            $delta \leftarrow R + \gamma Q(S', A') - Q(S, A)$ \\
+            $E(S, A) \leftarrow E(S, A) + 1$ \\
+            \ForEach{$s \in \mathcal{S}$, $a \in \mathcal{A}(s)$} {
+                $Q(s, a) \leftarrow Q(s, a) + \alpha \delta E(s, a)$ \\
+                $E(s, a) \leftarrow \gamma \lambda E(s, a)$ \\
+            }
+            $S \leftarrow S'$, $A \leftarrow A'$ \\
+        }
+    }
+    \caption{Sarsa($\lambda$)}
+\end{algorithm}
+
 \section{Deep Q Learning}
 Created by $DeepMind$, Deep Q Learning, DQL, substitutes the $Q$ function with a deep neural network called \emph{Q-network}. It also keep track of some observation in a $memory$ in order to use them to train the network.
 \begin{equation}
