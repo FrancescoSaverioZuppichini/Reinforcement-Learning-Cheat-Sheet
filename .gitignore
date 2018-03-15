@@ -1,0 +1,9 @@
+
+# don't version control IDE caches
+*.swp
+
+# don't version control LaTeX intermediary files
+*.aux
+*.log
+*.out
+
