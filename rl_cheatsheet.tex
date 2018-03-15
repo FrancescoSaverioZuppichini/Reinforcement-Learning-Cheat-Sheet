@@ -211,6 +211,31 @@ q_{\pi}(s,a) &= \mathbb{E}_{\pi}\begin{bmatrix} G_t | S_t = s, A_t = a \end{bmat
 \label{eq: action_value_bellman}
 \end{equation}
 
+\section{Contraction Mapping}
+
+\subsection{Definition}
+
+Let $(X, d)$ be a metric space and $f: X \rightarrow X$. We say that $f$ is a
+\emph{contraction} if there is a real number $k \in [0, 1)$ such that
+\begin{equation*}
+    d(f(x), f(y)) \leq k d(x, y)
+\end{equation*}
+
+for all $x$ and $y$ in $X$, where the term $k$ is called a \emph{Lipschitz coefficent} for $f$.
+
+\subsection{Contraction Mapping theorem}
+
+Let $(X,d)$ be a complete metric space and let $f: X \rightarrow X$ be a contraction.
+Then there is one and only one fixed point $x^\ast$ such that
+\begin{equation*}
+ f(x^\ast) = x^\ast
+\end{equation*}
+
+Moreover, if $x$ is any point in $X$ and $f^n(x)$ is inductively defined by
+$f^2(x) = f(f(x))$, $f^3(x)=f(f^2(x))$, \ldots, $f^n(x)=f(f^{n−1}(x))$,
+then $f^n(x) \rightarrow x^\ast$ as $n \rightarrow \infty$. This theorem guarantees
+a unique optimal solution for the dynamic programming algorithms detailed below.
+
 \section{Dynamic Programming}
 Taking advantages of the subproblem structure of the V and Q function we can find the optimal policy by just \emph{planning}
 \subsection{Policy Iteration}
@@ -245,6 +270,10 @@ We can now, find the optimal policy
 \caption{Policy Iteration}
 \end{algorithm}
 
+\end{multicols}
+
+\begin{multicols}{2}
+
 \subsection{Value Iteration}
 We can avoid to wait until $V(s)$ has converged and instead to policy improvement and truncated policy evaluation step in one operation
 \begin{algorithm}[H]
@@ -267,9 +296,6 @@ We can avoid to wait until $V(s)$ has converged and instead to policy improvemen
 \caption{Value Iteration}
 \end{algorithm}
 
-\end{multicols}
-
-\begin{multicols}{2}
 \section{Monte Carlo Methods}
 Monte Carlo (MC) is a \emph{Model Free} method, It does not require complete knowledge of the environment. It is based on \textbf{averaging sample returns} for each state-action pair. The following algorithm gives the basic implementation
 
@@ -326,6 +352,8 @@ r +  \gamma \max\limits_{a'}Q(s',a') - Q(s,a)
  }
 \caption{Q Learning}
 \end{algorithm}
+
+\columnbreak
 
 \section{Sarsa}
 
