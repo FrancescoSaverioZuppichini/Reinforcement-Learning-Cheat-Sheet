@@ -120,7 +120,7 @@ That is the probability of select an action $A_t = a$ if $S_t = s$.
 \section{Reward}
 The total \emph{reward} is expressed as:
 \begin{equation}
-G_t = \sum_{k = 0}^H = \gamma^kr_{t + k + 1}
+G_t = \sum_{k = 0}^H \gamma^kr_{t + k + 1}
 \label{eq: total_reward}
 \end{equation}
 Where $\gamma$ is the \emph{discount factor} and $H$ is the \emph{horizon}, that can be infinite.
@@ -143,7 +143,7 @@ A \textbf{Markov Decision Process}, MPD, is a 5-tuple $(S, A, P, R, \gamma)$ whe
 \section{Value Function}
 Value function describes \emph{how good} is to be in a specific state $s$ under a certain policy $\pi$. For MDP:
 \begin{equation}
-V_{\pi}(s) = \mathbb{E}[G_t | S_t = s)
+V_{\pi}(s) = \mathbb{E}[G_t | S_t = s]
 \label{eq: value_func}
 \end{equation}
 
@@ -436,7 +436,7 @@ Where $\theta$ are the weights of the network and $U(D)$ is the experience repla
 
 %---------------------------------------------------------------------------
 
-\rule{0.3\linewidth}{0.25pt}
+\rule{0.3\linewidth}{0.25pt} \\
 Copyright \copyright\ 2018 Francesco Saverio Zuppichini
 
 \scriptsize
