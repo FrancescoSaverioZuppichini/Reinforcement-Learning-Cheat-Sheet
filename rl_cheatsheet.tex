@@ -328,32 +328,9 @@ V(S_t) \leftarrow V(S_t) + \alpha \begin{bmatrix}
 \end{equation}
 Where $\alpha$ is the learning rate, how much we want to forget about pass experiences.
 
-\section{Temporal Difference - Q Learning}
-Temporal Difference (TD) methods learn directly from raw experience without a model of the environment's dynamics. TD substitutes the expected discounted reward $G_t$ from the episode with an estimation:
-\begin{equation}
-V(S_t) \leftarrow V(S_t) + \alpha \begin{bmatrix}
- R_{t + 1} + \gamma V(S_{t+1} - V(S_t)
-\end{bmatrix}
-\end{equation}
-The following algorithm gives a generic implementation.
-\begin{algorithm}[H]
- Initialise $Q(s,a)$ arbitrarily \\
-  \ForEach{episode $\in$ episodes}{
-        \While{$s$ is not terminal} {
-        Choose $a$ from $s$ using policy derived from $Q$ (e.g., $\epsilon$-greedy) \\
-        Take action $a$, observer $r, s'$ \\
-        $Q(s,a) \leftarrow Q(s,a) + \alpha  \begin{bmatrix}
-r +  \gamma \max\limits_{a'}Q(s',a') - Q(s,a)
-\end{bmatrix}$\\
-        $s \leftarrow s'$
-        }
- }
-\caption{Q Learning}
-\end{algorithm}
-
 \section{Sarsa}
 
-Sarsa (State-action-reward-state-action) is to control what Temporal Difference is to policy evaluation.
+Sarsa (State-action-reward-state-action) is a on-policy TD control. The update rule:
 
 \begin{equation*}
     Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha \left[r_t + \gamma Q(s_{t+1}, a_{t+1}) - Q(s_t, a_t) \right]
@@ -386,24 +363,45 @@ Forward-view Sarsa($\lambda$):
 \end{equation*}
 
 \begin{algorithm}[H]
-    Initialise $Q(s, a)$ arbitrarily, for all $s \in \mathcal{S}$, $a \in \mathcal{A}(s)$\\
-    \ForEach{episode $\in$ episodes} {
-        Initialise \emph{eligibility traces}: $E(s, a) = 0$ for all $s \in \mathcal{S}$, $a \in \mathcal{A}(s)$\\
-        Initialise $S$, $A$ \\
+ Initialise $Q(s,a)$ arbitrarily \\
+  \ForEach{episode $\in$ episodes}{
+        Choose $a$ from $s$ using policy derived from $Q$ (e.g., $\epsilon$-greedy) \\
         \While{$s$ is not terminal} {
-            take action $A$, observe $R$, $S'$ \\
-            choose $A'$ from $S'$ using policy derived from $Q$ (e.g. $\epsilon$-greedy) \\
-            $delta \leftarrow R + \gamma Q(S', A') - Q(S, A)$ \\
-            $E(S, A) \leftarrow E(S, A) + 1$ \\
-            \ForEach{$s \in \mathcal{S}$, $a \in \mathcal{A}(s)$} {
-                $Q(s, a) \leftarrow Q(s, a) + \alpha \delta E(s, a)$ \\
-                $E(s, a) \leftarrow \gamma \lambda E(s, a)$ \\
-            }
-            $S \leftarrow S'$, $A \leftarrow A'$ \\
+        Take action $a$, observer $r, s'$ \\
+        Choose $a'$ from $s'$ using policy derived from $Q$ (e.g., $\epsilon$-greedy) \\
+                $Q(s,a) \leftarrow Q(s,a) + \alpha  \begin{bmatrix}
+r +  \gamma Q(s',a') - Q(s,a)
+\end{bmatrix}$\\
+        $s \leftarrow s'$ \\
+        $a \leftarrow a'$
         }
-    }
+ }
     \caption{Sarsa($\lambda$)}
 \end{algorithm}
+
+\section{Temporal Difference - Q Learning}
+Temporal Difference (TD) methods learn directly from raw experience without a model of the environment's dynamics. TD substitutes the expected discounted reward $G_t$ from the episode with an estimation:
+\begin{equation}
+V(S_t) \leftarrow V(S_t) + \alpha \begin{bmatrix}
+ R_{t + 1} + \gamma V(S_{t+1} - V(S_t)
+\end{bmatrix}
+\end{equation}
+The following algorithm gives a generic implementation.
+\begin{algorithm}[H]
+ Initialise $Q(s,a)$ arbitrarily \\
+  \ForEach{episode $\in$ episodes}{
+        \While{$s$ is not terminal} {
+        Choose $a$ from $s$ using policy derived from $Q$ (e.g., $\epsilon$-greedy) \\
+        Take action $a$, observer $r, s'$ \\
+        $Q(s,a) \leftarrow Q(s,a) + \alpha  \begin{bmatrix}
+r +  \gamma \max\limits_{a'}Q(s',a') - Q(s,a)
+\end{bmatrix}$\\
+        $s \leftarrow s'$
+        }
+ }
+\caption{Q Learning}
+\end{algorithm}
+
 
 \section{Deep Q Learning}
 Created by $DeepMind$, Deep Q Learning, DQL, substitutes the $Q$ function with a deep neural network called \emph{Q-network}. It also keep track of some observation in a $memory$ in order to use them to train the network.
