@@ -363,7 +363,7 @@ Forward-view Sarsa($\lambda$):
 \end{equation*}
 
 \begin{algorithm}[H]
- Initialise $Q(s,a)$ arbitrarily \\
+ Initialise $Q(s,a)$ arbitrarily and $Q(terminal-state, ·) = 0$\\
   \ForEach{episode $\in$ episodes}{
         Choose $a$ from $s$ using policy derived from $Q$ (e.g., $\epsilon$-greedy) \\
         \While{$s$ is not terminal} {
@@ -388,7 +388,7 @@ V(S_t) \leftarrow V(S_t) + \alpha \begin{bmatrix}
 \end{equation}
 The following algorithm gives a generic implementation.
 \begin{algorithm}[H]
- Initialise $Q(s,a)$ arbitrarily \\
+ Initialise $Q(s,a)$ arbitrarily and $Q(terminal-state, ·) = 0$\\
   \ForEach{episode $\in$ episodes}{
         \While{$s$ is not terminal} {
         Choose $a$ from $s$ using policy derived from $Q$ (e.g., $\epsilon$-greedy) \\
