@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.11)  19 MAR 2018 12:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.11)  2 MAY 2018 11:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -342,7 +342,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box62
 \@float@everytoks=\toks22
 \@floatcapt=\box63
-) (/Users/vaevictis/Desktop/RL_cheatsheet/.texpadtmp/rl_cheatsheet.aux)
+) (/Users/vaevictis/Documents/Project/RL_cheatsheet/.texpadtmp/rl_cheatsheet.aux)
 \openout1 = `rl_cheatsheet.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
@@ -406,7 +406,7 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 86.
 LaTeX Info: Redefining \pageref on input line 86.
 LaTeX Info: Redefining \nameref on input line 86.
- (/Users/vaevictis/Desktop/RL_cheatsheet/.texpadtmp/rl_cheatsheet.out) (/Users/vaevictis/Desktop/RL_cheatsheet/.texpadtmp/rl_cheatsheet.out)
+ (/Users/vaevictis/Documents/Project/RL_cheatsheet/.texpadtmp/rl_cheatsheet.out) (/Users/vaevictis/Documents/Project/RL_cheatsheet/.texpadtmp/rl_cheatsheet.out)
 \@outlinefile=\write3
 \openout3 = `rl_cheatsheet.out'.
 
@@ -434,7 +434,7 @@ Package grfext Info: Graphics extension search list:
 (grfext)             \AppendGraphicsExtensions on input line 456.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
-)) <./images/Agent-Environment.png, id=92, 505.89pt x 188.705pt>
+)) <./images/Agent-Environment.png, id=96, 505.89pt x 188.705pt>
 File: ./images/Agent-Environment.png Graphic file (type png)
  <use ./images/Agent-Environment.png>
 Package pdftex.def Info: ./images/Agent-Environment.png used on input line 105.
@@ -499,58 +499,58 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 440.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 447.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 450.
  [2pdfTeX warning (ext4): destination with the same identifier (name{algocf.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.447 \end{document}
+l.450 \end{document}
                     pdfTeX warning (ext4): destination with the same identifier (name{algocf.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.447 \end{document}
+l.450 \end{document}
                     pdfTeX warning (ext4): destination with the same identifier (name{algocf.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.447 \end{document}
+l.450 \end{document}
                     pdfTeX warning (ext4): destination with the same identifier (name{algocf.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.447 \end{document}
+l.450 \end{document}
                     pdfTeX warning (ext4): destination with the same identifier (name{algocf.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.447 \end{document}
+l.450 \end{document}
                     ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 447.
- (/Users/vaevictis/Desktop/RL_cheatsheet/.texpadtmp/rl_cheatsheet.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 447.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 447.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 450.
+ (/Users/vaevictis/Documents/Project/RL_cheatsheet/.texpadtmp/rl_cheatsheet.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 450.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 450.
 Package rerunfilecheck Info: File `rl_cheatsheet.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 447.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 450.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 7700 strings out of 492995
- 113107 string characters out of 6132703
+ 7702 strings out of 492995
+ 113241 string characters out of 6132703
  263926 words of memory out of 5000000
- 11117 multiletter control sequences out of 15000+600000
+ 11118 multiletter control sequences out of 15000+600000
  10479 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  28i,25n,31p,338b,2293s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on /Users/vaevictis/Desktop/RL_cheatsheet/.texpadtmp/rl_cheatsheet.pdf (2 pages, 268316 bytes).
+Output written on /Users/vaevictis/Documents/Project/RL_cheatsheet/.texpadtmp/rl_cheatsheet.pdf (2 pages, 268575 bytes).
 PDF statistics:
- 229 PDF objects out of 1000 (max. 8388607)
- 201 compressed objects within 3 object streams
- 50 named destinations out of 1000 (max. 500000)
- 182 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 233 PDF objects out of 1000 (max. 8388607)
+ 205 compressed objects within 3 object streams
+ 51 named destinations out of 1000 (max. 500000)
+ 190 words of extra memory for PDF output out of 10000 (max. 10000000)
 
