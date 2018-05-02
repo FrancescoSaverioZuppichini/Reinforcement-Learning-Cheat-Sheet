@@ -176,7 +176,7 @@ v_*(s) = \max\limits_{a \in A(s)} q_{\pi*}(s,a)
 Intuitively, the above equation express the fact that the value of a state under the optimal policy \textbf{must be equal} to the expected return from the best action from that state.
 
 \section{Bellman Equation}
-An important recursive property emerges for booth Value \ref{eq: value_func} and Q \ref{eq: q_func} functions if the expand them.
+An important recursive property emerges for both Value (\ref{eq: value_func}) and Q (\ref{eq: q_func}) functions if we expand them.
 \subsection{Value Function}
 \begin{equation}
 \begin{array}{l l}
@@ -239,7 +239,7 @@ a unique optimal solution for the dynamic programming algorithms detailed below.
 \section{Dynamic Programming}
 Taking advantages of the subproblem structure of the V and Q function we can find the optimal policy by just \emph{planning}
 \subsection{Policy Iteration}
-We can now, find the optimal policy
+We can now find the optimal policy
 \begin{algorithm}[H]
 %\SetAlgoLined
  1. Initialisation \\
@@ -275,7 +275,7 @@ We can now, find the optimal policy
 \begin{multicols}{3}
 
 \subsection{Value Iteration}
-We can avoid to wait until $V(s)$ has converged and instead to policy improvement and truncated policy evaluation step in one operation
+We can avoid to wait until $V(s)$ has converged and instead do policy improvement and truncated policy evaluation step in one operation
 \begin{algorithm}[H]
   \SetKwInOut{Output}{ouput}
  Initialise $V(s) \in \mathbb{R}, \text{e.g} V(s) = 0$ \\
@@ -320,13 +320,13 @@ Monte Carlo (MC) is a \emph{Model Free} method, It does not require complete kno
 \caption{Monte Carlo first-visit }
 \end{algorithm}
 % }
-For no-stationary problems, the Monte Carlo estimate for, e.g, $V$ is:
+For non-stationary problems, the Monte Carlo estimate for, e.g, $V$ is:
 \begin{equation}
 V(S_t) \leftarrow V(S_t) + \alpha \begin{bmatrix}
         G_t - V(S_t)
 \end{bmatrix}
 \end{equation}
-Where $\alpha$ is the learning rate, how much we want to forget about pass experiences.
+Where $\alpha$ is the learning rate, how much we want to forget about past experiences.
 
 \section{Sarsa}
 
