@@ -422,7 +422,7 @@ Where $\theta$ are the weights of the network and $U(D)$ is the experience repla
          Take action $a$, observer $r, s'$ \\
          Store transition $(s, a, r, s')$ in $D$ \\
          Sample random minibatch of transitions $(s_j, a_j, r_j, s'_j)$ from $D$ \\
-         $\text{Set } y_i \leftarrow
+         $\text{Set } y_j \leftarrow
            \begin{cases}
                r_j & \text{for terminal } s_j'\\
                r_j + \gamma \max\limits_a Q(s',a'; \theta) & \text{for non-terminal } s'_j
