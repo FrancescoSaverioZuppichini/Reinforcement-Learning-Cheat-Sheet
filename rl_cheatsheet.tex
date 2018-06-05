@@ -184,9 +184,9 @@ v_{\pi}(s) & = \mathbb{E}_{\pi}\begin{bmatrix}G_t | S_t = s\end{bmatrix} \\
 \\
 & =  \mathbb{E}_{\pi}\begin{bmatrix}\sum\limits_{k = 0}^{\infty} \gamma^kR_{t + k + 1} | S_t = s \end{bmatrix} \\
 \\
-& = \mathbb{E}_{\pi}\begin{bmatrix}R_{t + 1} + \sum\limits_{k = 0}^{\infty} \gamma^k R_{t + k + 2} | S_t = s \end{bmatrix} \\
+& = \mathbb{E}_{\pi}\begin{bmatrix}R_{t + 1} + \gamma \sum\limits_{k = 0}^{\infty} \gamma^k R_{t + k + 2} | S_t = s \end{bmatrix} \\
 \\
-& = \underbrace{\sum\limits_{a} \pi(a | s) \sum\limits_{s'}\sum\limits_{r} p(s', r | s, a)}_{\text{Sum of all probabilities $\forall$ possibile $r$}} \\
+& = \underbrace{\sum\limits_{a} \pi(a | s) \sum\limits_{s'}\sum\limits_{r} p(s', r | s, a)}_{\text{Sum of all probabilities $\forall$ possible $r$}} \\
 & \begin{bmatrix} r + \gamma \underbrace{\mathbb{E}_{\pi}\begin{bmatrix} \sum\limits_{k = 0}^{\infty} \gamma^k R_{t + k + 2} | S_{t + 1} = s' \end{bmatrix}}_{\text{Expected reward from } s_{t + 1}} \end{bmatrix} \\
 \\
 & = \sum\limits_{a} \pi(a | s) \sum\limits_{s'}\sum\limits_{r} p(s', r | s, a)\begin{bmatrix} r + \gamma v_{\pi}(s')
@@ -202,9 +202,9 @@ q_{\pi}(s,a) &= \mathbb{E}_{\pi}\begin{bmatrix} G_t | S_t = s, A_t = a \end{bmat
 \\
 &= \mathbb{E}_{\pi}\begin{bmatrix} \sum\limits_{k = 0}^{\infty}\gamma^kR_{t + k + 1} | S_t = s, A_t = a \end{bmatrix} \\
 \\
-&= \mathbb{E}_{\pi}\begin{bmatrix}R_{t+1} + \sum\limits_{k = 0}^{\infty}\gamma^kR_{t + k + 2} | S_t = s, A_t = a \end{bmatrix} \\
+&= \mathbb{E}_{\pi}\begin{bmatrix}R_{t+1} + \gamma \sum\limits_{k = 0}^{\infty}\gamma^kR_{t + k + 2} | S_t = s, A_t = a \end{bmatrix} \\
 \\
-&=\sum\limits_{s',r} p(s', r| s, a)\begin{bmatrix}r +\mathbb{E}_{\pi} \begin{bmatrix} \sum\limits_{k = 0}^{\infty} \gamma^k   R_{t + k + 2} | S_{t+1} = s' \end{bmatrix}  \end{bmatrix} \\
+&=\sum\limits_{s',r} p(s', r| s, a)\begin{bmatrix}r + \gamma \mathbb{E}_{\pi} \begin{bmatrix} \sum\limits_{k = 0}^{\infty} \gamma^k   R_{t + k + 2} | S_{t+1} = s' \end{bmatrix}  \end{bmatrix} \\
 \\
         &=\sum\limits_{s',r} p(s', r| s, a)\begin{bmatrix}r +\gamma  V_{\pi}(s') \end{bmatrix}\\
 \end{array}
