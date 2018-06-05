@@ -246,7 +246,7 @@ We can now find the optimal policy
  $V(s) \in \mathbb{R}, (\text{e.g } V(s) = 0)$ and $\pi(s) \in A$  for all $s \in S$,\\
  $\Delta \leftarrow 0$ \\
  2. Policy Evaluation \\
- \While{$\Delta < \theta$ (a small positive number)}{
+ \While{$\Delta \ge \theta$ (a small positive number)}{
   \ForEach{$s \in S$} {
         $v \leftarrow V(s)$\\
         $V(s) \leftarrow \sum\limits_a \pi(a|s) \sum\limits_{s', r} p(s',r | s, a) \begin{bmatrix}
@@ -279,7 +279,7 @@ We can avoid to wait until $V(s)$ has converged and instead do policy improvemen
   \SetKwInOut{Output}{ouput}
  Initialise $V(s) \in \mathbb{R}, \text{e.g} V(s) = 0$ \\
  $\Delta \leftarrow 0$ \\
- \While{$\Delta < \theta$ (a small positive number)}{
+ \While{$\Delta \ge \theta$ (a small positive number)}{
   \ForEach{$s \in S$} {
         $v \leftarrow V(s)$\\
         $V(s) \leftarrow \max\limits_a \sum\limits_{s', r} p(s',r | s, a) \begin{bmatrix}
