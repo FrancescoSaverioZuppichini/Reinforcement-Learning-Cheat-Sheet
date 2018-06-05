@@ -257,14 +257,14 @@ We can now find the optimal policy
 
  }
  3. Policy Improvement \\
- \emph{policy-stable} $ \leftarrow $ \emph{true} \\
+ \emph{policy-stable} $ \leftarrow $ \emph{false} \\
  \While{not policy-stable}{
   \ForEach{$s \in S$} {
         \emph{old-action} $\leftarrow \pi(s)$
         $\pi(s) \leftarrow \argmax\limits_a\sum\limits_{s', r} p(s',r | s, a)  \begin{bmatrix}
             r + \gamma V(s')
         \end{bmatrix}$ \\
-        \emph{policy-stable} $\leftarrow$ \emph{old-action} $ \neq \pi(s)$
+        \emph{policy-stable} $\leftarrow$ \emph{old-action} $ \eq \pi(s)$
   }
  }
 \caption{Policy Iteration}
