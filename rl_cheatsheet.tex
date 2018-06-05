@@ -118,24 +118,22 @@ That is the probability of select an action $A_t = a$ if $S_t = s$.
 
 
 \section{Reward}
-The total \emph{reward} is expressed as:
+The total discounted \emph{reward} from time-step $t$ is expressed as:
 \begin{equation}
 G_t = \sum_{k = 0}^H \gamma^kr_{t + k + 1}
 \label{eq: total_reward}
 \end{equation}
-Where $\gamma$ is the \emph{discount factor} and $H$ is the \emph{horizon}, that can be infinite.
+Where $\gamma$ is the \emph{discount factor} ($\gamma \in \{0, 1\}$) and $H$ is the \emph{horizon}, that can be infinite.
 
 \subsection{Markov Decision Process}
 A \textbf{Markov Decision Process}, MPD, is a 5-tuple $(S, A, P, R, \gamma)$ where:
 \begin{equation}
         \begin{array}{l}
-         \text{finite set of states:} \\
-                s \in S \\
-         \text{finite set of actions:} \\
-        a \in A \\
-                 \text{state transition probabilities:} \\
-        p(s' | s, a) = Pr \{S_{t + 1} = s' | S_t = s, A_t = a \} \\
-                \text{expected reward for state-action-nexstate:}\\
+                \text{S is a finite set of states} \\
+                \text{A is a finite set of actions} \\
+                \text{P is a state transition matrix:} \\
+        p(s' | s, a) = \mathbb{P}[S_{t + 1} = s' | S_t = s, A_t = a] \\
+                \text{R expected reward function:} \\
         r(s',s, a) = \mathbb{E}[ R_{t + 1} | S_{t + 1} = s',  S_t = s, A_t = a ]  \\
         \end{array}
 \end{equation}
@@ -143,16 +141,16 @@ A \textbf{Markov Decision Process}, MPD, is a 5-tuple $(S, A, P, R, \gamma)$ whe
 \section{Value Function}
 Value function describes \emph{how good} is to be in a specific state $s$ under a certain policy $\pi$. For MDP:
 \begin{equation}
-V_{\pi}(s) = \mathbb{E}[G_t | S_t = s]
+V_{\pi}(s) = \mathbb{E}_{\pi}[G_t | S_t = s]
 \label{eq: value_func}
 \end{equation}
 
-Informally, is the expected return (expected cumulative discounted reward) when starting from $s$ and following $\pi$
+Informally, $G_t$ is the expected return (expected cumulative discounted reward) when starting from $s$ and following $\pi$
 
 \subsection{Optimal}
 
 \begin{equation}
-v_*(s) = \max\limits_{\pi} v^\pi(s)
+v_*(s) = \max\limits_{\pi} v_{\pi}(s)
 \label{eq: value_optimal}
 \end{equation}
 
@@ -166,27 +164,27 @@ q_{\pi}(s, a) = \mathbb{E}_{\pi}\begin{bmatrix} G_t | S_t = s, A_t = a \end{bmat
 The optimal value-action function:
 
 \begin{equation}
-q_*(s,a) = \max\limits_{\pi} q^\pi(s,a)
+q_*(s,a) = \max\limits_{\pi} q_{\pi}(s,a)
 \label{eq: action_value_optimal}
 \end{equation}
-Clearly, using this new notation we can redefine $v^*$, equation \ref{eq: value_optimal}, using $q^*(s,a)$, equation \ref{eq: action_value_optimal}:
+Clearly, using this new notation we can redefine $v_*$, equation \ref{eq: value_optimal}, using $q_*(s,a)$, equation \ref{eq: action_value_optimal}:
 \begin{equation}
-v_*(s) = \max\limits_{a \in A(s)} q_{\pi*}(s,a)
+v_*(s) = \max\limits_{a \in A(s)} q_*(s,a)
 \end{equation}
 Intuitively, the above equation express the fact that the value of a state under the optimal policy \textbf{must be equal} to the expected return from the best action from that state.
 
 \section{Bellman Equation}
-An important recursive property emerges for both Value (\ref{eq: value_func}) and Q (\ref{eq: q_func}) functions if we expand them.
+An important recursive property emerges for both state-value (\ref{eq: value_func}) and action-value (\ref{eq: q_func}) functions if we expand them.
 \subsection{Value Function}
 \begin{equation}
 \begin{array}{l l}
 v_{\pi}(s) & = \mathbb{E}_{\pi}\begin{bmatrix}G_t | S_t = s\end{bmatrix} \\
 \\
-& =  \mathbb{E}_{\pi}\begin{bmatrix}\sum\limits_{k = 0}^{\infty} \gamma^kR_{t + k + 1} | S_t = s \end{bmatrix} \\
+& =  \mathbb{E}_{\pi}\begin{bmatrix}\sum\limits_{k = 0}^{\infty} \gamma^k R_{t + k + 1} | S_t = s \end{bmatrix} \\
 \\
-& = \mathbb{E}_{\pi}\begin{bmatrix}R_{t + 1} + \sum\limits_{k = 0}^{\infty} \gamma^k R_{t + k + 2} | S_t = s \end{bmatrix} \\
+& = \mathbb{E}_{\pi}\begin{bmatrix}R_{t + 1} + \gamma \sum\limits_{k = 0}^{\infty} \gamma^k R_{t + k + 2} | S_t = s \end{bmatrix} \\
 \\
-& = \underbrace{\sum\limits_{a} \pi(a | s) \sum\limits_{s'}\sum\limits_{r} p(s', r | s, a)}_{\text{Sum of all probabilities $\forall$ possibile $r$}} \\
+& = \underbrace{\sum\limits_{a} \pi(a | s) \sum\limits_{s'}\sum\limits_{r} p(s', r | s, a)}_{\text{Sum of all probabilities $\forall$ possible $r$}} \\
 & \begin{bmatrix} r + \gamma \underbrace{\mathbb{E}_{\pi}\begin{bmatrix} \sum\limits_{k = 0}^{\infty} \gamma^k R_{t + k + 2} | S_{t + 1} = s' \end{bmatrix}}_{\text{Expected reward from } s_{t + 1}} \end{bmatrix} \\
 \\
 & = \sum\limits_{a} \pi(a | s) \sum\limits_{s'}\sum\limits_{r} p(s', r | s, a)\begin{bmatrix} r + \gamma v_{\pi}(s')
@@ -202,9 +200,9 @@ q_{\pi}(s,a) &= \mathbb{E}_{\pi}\begin{bmatrix} G_t | S_t = s, A_t = a \end{bmat
 \\
 &= \mathbb{E}_{\pi}\begin{bmatrix} \sum\limits_{k = 0}^{\infty}\gamma^kR_{t + k + 1} | S_t = s, A_t = a \end{bmatrix} \\
 \\
-&= \mathbb{E}_{\pi}\begin{bmatrix}R_{t+1} + \sum\limits_{k = 0}^{\infty}\gamma^kR_{t + k + 2} | S_t = s, A_t = a \end{bmatrix} \\
+&= \mathbb{E}_{\pi}\begin{bmatrix}R_{t+1} + \gamma \sum\limits_{k = 0}^{\infty}\gamma^kR_{t + k + 2} | S_t = s, A_t = a \end{bmatrix} \\
 \\
-&=\sum\limits_{s',r} p(s', r| s, a)\begin{bmatrix}r +\mathbb{E}_{\pi} \begin{bmatrix} \sum\limits_{k = 0}^{\infty} \gamma^k   R_{t + k + 2} | S_{t+1} = s' \end{bmatrix}  \end{bmatrix} \\
+&=\sum\limits_{s',r} p(s', r| s, a)\begin{bmatrix}r + \gamma \mathbb{E}_{\pi} \begin{bmatrix} \sum\limits_{k = 0}^{\infty} \gamma^k   R_{t + k + 2} | S_{t+1} = s' \end{bmatrix}  \end{bmatrix} \\
 \\
         &=\sum\limits_{s',r} p(s', r| s, a)\begin{bmatrix}r +\gamma  V_{\pi}(s') \end{bmatrix}\\
 \end{array}
