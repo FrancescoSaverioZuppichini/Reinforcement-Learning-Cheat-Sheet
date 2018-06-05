@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.11)  2 MAY 2018 11:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.11)  5 JUN 2018 09:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -462,77 +462,77 @@ Missing character: There is no ’ in font cmr6!
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.273 \end{multicols}
+l.272 \end{multicols}
                       <./images/Agent-Environment.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 339.
+(hyperref)                removing `math shift' on input line 338.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 339.
+(hyperref)                removing `math shift' on input line 338.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 353.
+(hyperref)                removing `math shift' on input line 352.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\lambda' on input line 353.
+(hyperref)                removing `\lambda' on input line 352.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 353.
+(hyperref)                removing `math shift' on input line 352.
 
 Missing character: There is no Â in font cmr8!
 Missing character: There is no · in font cmr8!
 Missing character: There is no Â in font cmr8!
 Missing character: There is no · in font cmr8!
 
-Overfull \hbox (17.36076pt too wide) detected at line 412
+Overfull \hbox (17.36076pt too wide) detected at line 411
 \OML/cmm/m/it/8 L[]\OT1/cmr/m/n/8 (\OML/cmm/m/it/8 ^^R[]\OT1/cmr/m/n/8 ) = \U/msb/m/n/8 E[] []
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 440.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 439.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 440.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 450.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 439.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 449.
  [2pdfTeX warning (ext4): destination with the same identifier (name{algocf.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.450 \end{document}
+l.449 \end{document}
                     pdfTeX warning (ext4): destination with the same identifier (name{algocf.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.450 \end{document}
+l.449 \end{document}
                     pdfTeX warning (ext4): destination with the same identifier (name{algocf.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.450 \end{document}
+l.449 \end{document}
                     pdfTeX warning (ext4): destination with the same identifier (name{algocf.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.450 \end{document}
+l.449 \end{document}
                     pdfTeX warning (ext4): destination with the same identifier (name{algocf.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.450 \end{document}
+l.449 \end{document}
                     ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 450.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 449.
  (/Users/vaevictis/Documents/Project/RL_cheatsheet/.texpadtmp/rl_cheatsheet.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 450.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 450.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 449.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 449.
 Package rerunfilecheck Info: File `rl_cheatsheet.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 450.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 449.
  )
 (\end occurred inside a group at level 1)
 
@@ -545,9 +545,9 @@ Here is how much of TeX's memory you used:
  11118 multiletter control sequences out of 15000+600000
  10479 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,25n,31p,338b,2293s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28i,25n,31p,338b,2297s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on /Users/vaevictis/Documents/Project/RL_cheatsheet/.texpadtmp/rl_cheatsheet.pdf (2 pages, 268567 bytes).
+Output written on /Users/vaevictis/Documents/Project/RL_cheatsheet/.texpadtmp/rl_cheatsheet.pdf (2 pages, 268522 bytes).
 PDF statistics:
  233 PDF objects out of 1000 (max. 8388607)
  205 compressed objects within 3 object streams
