@@ -8,16 +8,13 @@
 \BOOKMARK [2][-]{section*.8}{Optimal}{section*.7}% 8
 \BOOKMARK [1][-]{section*.9}{Bellman Equation}{}% 9
 \BOOKMARK [2][-]{section*.10}{Value Function}{section*.9}% 10
-\BOOKMARK [1][-]{section*.11}{Contraction Mapping}{}% 11
-\BOOKMARK [2][-]{section*.12}{Definition}{section*.11}% 12
-\BOOKMARK [2][-]{section*.13}{Contraction Mapping theorem}{section*.11}% 13
-\BOOKMARK [1][-]{section*.14}{Dynamic Programming}{}% 14
-\BOOKMARK [2][-]{section*.15}{Policy Iteration}{section*.14}% 15
-\BOOKMARK [2][-]{section*.16}{Value Iteration}{section*.14}% 16
-\BOOKMARK [1][-]{section*.17}{Monte Carlo Methods}{}% 17
-\BOOKMARK [1][-]{section*.18}{Sarsa}{}% 18
-\BOOKMARK [2][-]{section*.19}{n-step Sarsa}{section*.18}% 19
-\BOOKMARK [2][-]{section*.20}{Forward View Sarsa\(\)}{section*.18}% 20
-\BOOKMARK [1][-]{section*.21}{Temporal Difference - Q Learning}{}% 21
-\BOOKMARK [1][-]{section*.22}{Deep Q Learning}{}% 22
-\BOOKMARK [1][-]{section*.23}{Double Deep Q Learning}{}% 23
+\BOOKMARK [1][-]{section*.11}{Dynamic Programming}{}% 11
+\BOOKMARK [2][-]{section*.12}{Policy Iteration}{section*.11}% 12
+\BOOKMARK [2][-]{section*.13}{Value Iteration}{section*.11}% 13
+\BOOKMARK [1][-]{section*.14}{Monte Carlo Methods}{}% 14
+\BOOKMARK [1][-]{section*.15}{Sarsa}{}% 15
+\BOOKMARK [2][-]{section*.16}{n-step Sarsa}{section*.15}% 16
+\BOOKMARK [2][-]{section*.17}{Forward View Sarsa\(\)}{section*.15}% 17
+\BOOKMARK [1][-]{section*.18}{Temporal Difference - Q Learning}{}% 18
+\BOOKMARK [1][-]{section*.19}{Deep Q Learning}{}% 19
+\BOOKMARK [1][-]{section*.20}{Double Deep Q Learning}{}% 20

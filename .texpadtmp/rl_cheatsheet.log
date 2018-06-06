@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.11)  5 JUN 2018 09:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.11)  6 JUN 2018 15:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -434,7 +434,7 @@ Package grfext Info: Graphics extension search list:
 (grfext)             \AppendGraphicsExtensions on input line 456.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
-)) <./images/Agent-Environment.png, id=96, 505.89pt x 188.705pt>
+)) <./images/Agent-Environment.png, id=84, 505.89pt x 188.705pt>
 File: ./images/Agent-Environment.png Graphic file (type png)
  <use ./images/Agent-Environment.png>
 Package pdftex.def Info: ./images/Agent-Environment.png used on input line 105.
@@ -449,21 +449,29 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 \MyLen=\skip70
 
-Overfull \hbox (12.71596pt too wide) detected at line 212
+Overfull \hbox (17.56621pt too wide) detected at line 212
 []
  []
 
-Missing character: There is no â in font cmr6!
-Missing character: There is no ˆ in font cmr6!
-Missing character: There is no ’ in font cmr6!
-[1
+
+Overfull \vbox (67.90314pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (67.90314pt too high) has occurred while \output is active []
+
+ [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}pdfTeX warning (ext4): destination with the same identifier (name{algocf.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.272 \end{multicols}
-                      <./images/Agent-Environment.png>]
+l.300 
+      pdfTeX warning (ext4): destination with the same identifier (name{algocf.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.300 
+       <./images/Agent-Environment.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 338.
@@ -500,12 +508,7 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 439.
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 449.
- [2pdfTeX warning (ext4): destination with the same identifier (name{algocf.2}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.449 \end{document}
-                    pdfTeX warning (ext4): destination with the same identifier (name{algocf.3}) has been already used, duplicate ignored
+ [2pdfTeX warning (ext4): destination with the same identifier (name{algocf.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -539,18 +542,18 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 449.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 7702 strings out of 492995
- 113241 string characters out of 6132703
- 263926 words of memory out of 5000000
- 11118 multiletter control sequences out of 15000+600000
+ 7695 strings out of 492995
+ 113153 string characters out of 6132703
+ 260923 words of memory out of 5000000
+ 11114 multiletter control sequences out of 15000+600000
  10479 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,25n,31p,338b,2297s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28i,25n,31p,338b,2296s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on /Users/vaevictis/Documents/Project/RL_cheatsheet/.texpadtmp/rl_cheatsheet.pdf (2 pages, 268522 bytes).
+Output written on /Users/vaevictis/Documents/Project/RL_cheatsheet/.texpadtmp/rl_cheatsheet.pdf (2 pages, 263839 bytes).
 PDF statistics:
- 233 PDF objects out of 1000 (max. 8388607)
- 205 compressed objects within 3 object streams
- 51 named destinations out of 1000 (max. 500000)
- 190 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 219 PDF objects out of 1000 (max. 8388607)
+ 192 compressed objects within 2 object streams
+ 48 named destinations out of 1000 (max. 500000)
+ 166 words of extra memory for PDF output out of 10000 (max. 10000000)
 
