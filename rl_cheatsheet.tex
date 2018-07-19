@@ -382,7 +382,7 @@ r +  \gamma Q(s',a') - Q(s,a)
 Temporal Difference (TD) methods learn directly from raw experience without a model of the environment's dynamics. TD substitutes the expected discounted reward $G_t$ from the episode with an estimation:
 \begin{equation}
 V(S_t) \leftarrow V(S_t) + \alpha \begin{bmatrix}
- R_{t + 1} + \gamma V(S_{t+1} - V(S_t)
+ R_{t + 1} + \gamma V(S_{t+1}) - V(S_t)
 \end{bmatrix}
 \end{equation}
 The following algorithm gives a generic implementation.
