@@ -152,7 +152,7 @@ Informally, is the expected return (expected cumulative discounted reward) when 
 \subsection{Optimal}
 
 \begin{equation}
-v_*(s) = \max\limits_{\pi} v^\pi(s)
+V_*(s) = \max\limits_{\pi} V_\pi(s)
 \label{eq: value_optimal}
 \end{equation}
 
@@ -169,9 +169,9 @@ The optimal value-action function:
 q_*(s,a) = \max\limits_{\pi} q^\pi(s,a)
 \label{eq: action_value_optimal}
 \end{equation}
-Clearly, using this new notation we can redefine $v^*$, equation \ref{eq: value_optimal}, using $q^*(s,a)$, equation \ref{eq: action_value_optimal}:
+Clearly, using this new notation we can redefine $V^*$, equation \ref{eq: value_optimal}, using $q^*(s,a)$, equation \ref{eq: action_value_optimal}:
 \begin{equation}
-v_*(s) = \max\limits_{a \in A(s)} q_{\pi*}(s,a)
+V_*(s) = \max\limits_{a \in A(s)} q_{\pi*}(s,a)
 \end{equation}
 Intuitively, the above equation express the fact that the value of a state under the optimal policy \textbf{must be equal} to the expected return from the best action from that state.
 
@@ -180,7 +180,7 @@ An important recursive property emerges for both Value (\ref{eq: value_func}) an
 \subsection{Value Function}
 \begin{equation}
 \begin{array}{l l}
-v_{\pi}(s) & = \mathbb{E}_{\pi}\begin{bmatrix}G_t | S_t = s\end{bmatrix} \\
+V_{\pi}(s) & = \mathbb{E}_{\pi}\begin{bmatrix}G_t | S_t = s\end{bmatrix} \\
 \\
 & =  \mathbb{E}_{\pi}\begin{bmatrix}\sum\limits_{k = 0}^{\infty} \gamma^kR_{t + k + 1} | S_t = s \end{bmatrix} \\
 \\
@@ -189,7 +189,7 @@ v_{\pi}(s) & = \mathbb{E}_{\pi}\begin{bmatrix}G_t | S_t = s\end{bmatrix} \\
 & = \underbrace{\sum\limits_{a} \pi(a | s) \sum\limits_{s'}\sum\limits_{r} p(s', r | s, a)}_{\text{Sum of all probabilities $\forall$ possible $r$}} \\
 & \begin{bmatrix} r + \gamma \underbrace{\mathbb{E}_{\pi}\begin{bmatrix} \sum\limits_{k = 0}^{\infty} \gamma^k R_{t + k + 2} | S_{t + 1} = s' \end{bmatrix}}_{\text{Expected reward from } s_{t + 1}} \end{bmatrix} \\
 \\
-& = \sum\limits_{a} \pi(a | s) \sum\limits_{s'}\sum\limits_{r} p(s', r | s, a)\begin{bmatrix} r + \gamma v_{\pi}(s')
+& = \sum\limits_{a} \pi(a | s) \sum\limits_{s'}\sum\limits_{r} p(s', r | s, a)\begin{bmatrix} r + \gamma V_{\pi}(s')
 \end{bmatrix}
 \end{array}
 \label{eq: value_bellman}
@@ -265,7 +265,7 @@ We can now find the optimal policy
         \end{bmatrix}$ \\
         \emph{policy-stable} $\leftarrow$ \emph{old-action} $ = \pi(s)$
   }
-if \emph{policy-stable} return V $\approx v_*$ and $\pi \approx \pi_*$, else go to 2
+if \emph{policy-stable} return V $\approx V_*$ and $\pi \approx \pi_*$, else go to 2
 \caption{Policy Iteration}
 \end{algorithm}
 
